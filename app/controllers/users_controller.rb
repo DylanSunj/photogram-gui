@@ -1,9 +1,9 @@
-class UsersController < ActionController::Base
+class UsersController < ApplicationController
   def index
     matching_users = User.all 
     @list_of_users = matching_users.order({ :username => :asc})
 
-    render( {:template => "user_templates/index"})
+    render({:template => "user_templates/index"})
   end 
 
   def show 
@@ -17,5 +17,13 @@ class UsersController < ActionController::Base
     else
       render({ :template => "user_templates/show"})
     end
+  end
+
+  def create
+    user = User.new
+    user.username = params.fetch("username_id")
+    user.save 
+
+    redirect_to("/users/" + user.username.to_s)
   end
 end

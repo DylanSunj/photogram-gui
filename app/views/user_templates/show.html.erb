@@ -5,7 +5,11 @@
   <dd><%= @the_user.id %></dd>
 
   <dt>Edit user</dt>
-  <dd>form goes here</dd>
+  <dd>
+  <form action="/add_comment" method="post">
+  <label for="query_photo_comment">Photo ID</label>
+  <input id="query_photo_comment" type=text value="<%= @the_photo.id %>"name="input_photo_id">
+  </dd>
 </dl>
 
 <h2> Own photos (<%= @the_user.own_photos.size %>)</h2>

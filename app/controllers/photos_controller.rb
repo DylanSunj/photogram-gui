@@ -1,4 +1,4 @@
-class PhotosController < ActionController::Base
+class PhotosController < ApplicationController
   def index
     matching_photos = Photo.all
 
