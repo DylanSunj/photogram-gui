@@ -29,7 +29,7 @@ class PhotosController < ApplicationController
   end 
 
   def create
-    input_imagr = params.fetch("query_image")
+    input_image = params.fetch("query_image")
     input_caption = params.fetch("query_caption")
     input_owner_id = params.fetch("query_owner_id")
 
