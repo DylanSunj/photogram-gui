@@ -26,4 +26,15 @@ class UsersController < ApplicationController
 
     redirect_to("/users/" + user.username.to_s)
   end
+
+  def update
+    username_check = params.fetch("input_username")
+    user_id = params.fetch(:user_id)
+    user = User.where({ :username => user_id})
+    user_selected = user.at(0)
+    user_selected.username = username_check
+    user_selected.save
+
+    redirect_to("/users/" + user_selected.username.to_s)
+  end
 end

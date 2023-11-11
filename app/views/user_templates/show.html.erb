@@ -6,9 +6,10 @@
 
   <dt>Edit user</dt>
   <dd>
-  <form action="/add_comment" method="post">
-  <label for="query_photo_comment">Photo ID</label>
-  <input id="query_photo_comment" type=text value="<%= @the_photo.id %>"name="input_photo_id">
+  <form action="/update_user/<%= @the_user.username%>" method="post">
+  <label for="query_user">Username</label>
+  <input id="query_user" type=text value="<%= @the_user.username %>" name="input_username">
+  <button>Update user</button>
   </dd>
 </dl>
 
